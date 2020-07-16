@@ -3,19 +3,22 @@ package com.jay.anodatest.view
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import com.jay.anodatest.R
+import com.jay.anodatest.util.common.iterator.CircularIterator
 import com.jay.anodatest.util.ui.SwipeTouchListener
+import rx.subjects.PublishSubject
 
-class ImageViewer : FrameLayout {
+open class ImageViewer : FrameLayout {
 
-    private val imagesContainer: MutableList<Drawable> = mutableListOf()
+    val swipeObserver: PublishSubject<Int> = PublishSubject.create()
 
-    private val inflater: LayoutInflater
-            = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    private val circularIterator = CircularIterator<Drawable>()
+
+    private val inflater: LayoutInflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     private lateinit var rootLayout: ImageView
 
@@ -28,27 +31,41 @@ class ImageViewer : FrameLayout {
 
     init {
         init()
-//        setOnSwipeListener()
+        setOnSwipeListener()
+    }
+
+    fun setImages(vararg images: Drawable) {
+        circularIterator.setCollection(images.toList())
+        rootLayout.setImageDrawable(circularIterator.getNext())
+    }
+
+    fun imageCount() = circularIterator.getSize()
+
+    protected open fun setNextImage() {
+        rootLayout.setImageDrawable(circularIterator.getNext())
+    }
+
+    protected open fun setPreviousImage() {
+        rootLayout.setImageDrawable(circularIterator.getPrevious())
     }
 
     private fun init() {
-        rootLayout = inflater.inflate(R.layout.view_image_viewer, this, false) as ImageView
+        rootLayout = inflater.inflate(R.layout.view_image, this, false) as ImageView
         addView(rootLayout)
-
-        rootLayout.setImageDrawable(resources.getDrawable(R.drawable.profile_image))
     }
 
-     fun setOnSwipeListener(context: Context) {
+    private fun setOnSwipeListener() {
         setOnTouchListener(object : SwipeTouchListener(context) {
 
             override fun onSwipeRight() {
-                Log.d("TAG", "onSwipeRight: ")
+                setPreviousImage()
+                swipeObserver.onNext(SWIPE_RIGHT)
             }
 
             override fun onSwipeLeft() {
-                Log.d("TAG", "onSwipeLeft: ")
+                setNextImage()
+                swipeObserver.onNext(SWIPE_LEFT)
             }
         })
     }
-
 }

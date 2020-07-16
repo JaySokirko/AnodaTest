@@ -61,8 +61,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="@dimen/red_dot_width"
-            android:layout_height="@dimen/red_dot_height"
+            android:layout_width="@dimen/dot_width"
+            android:layout_height="@dimen/dot_height"
             android:src="@drawable/ic_circle_red"
             android:layout_marginTop="@dimen/x"
             app:layout_constraintEnd_toEndOf="@+id/profile"

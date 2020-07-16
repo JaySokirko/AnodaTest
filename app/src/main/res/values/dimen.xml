@@ -11,7 +11,7 @@
     <dimen name="nav_view_image_width">48dp</dimen>
     <dimen name="nav_view_instagram_text_size">32sp</dimen>
 
-    <dimen name="red_dot_height">5dp</dimen>
-    <dimen name="red_dot_width">5dp</dimen>
+    <dimen name="dot_height">5dp</dimen>
+    <dimen name="dot_width">5dp</dimen>
 
 </resources>

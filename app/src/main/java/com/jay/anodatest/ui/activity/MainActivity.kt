@@ -14,11 +14,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.container, HomeFragment.newInstance())
-//            .commit()
-
-        image.setOnSwipeListener(this)
-
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, HomeFragment.newInstance())
+            .commit()
     }
 }

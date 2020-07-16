@@ -64,10 +64,21 @@
         app:layout_constraintGuide_percent="0.70" />
 
     <com.jay.anodatest.view.ImageViewer
+        android:id="@+id/image_viewer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/x2"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/place" />
+
+    <com.jay.anodatest.view.DotsView
+        android:id="@+id/dots_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x2"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/image_viewer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_viewer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
