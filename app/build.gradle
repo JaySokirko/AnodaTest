@@ -15,9 +15,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
         viewBinding = true
     }
@@ -54,6 +55,11 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
 
     //Rx
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
@@ -69,11 +75,12 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //lifecycle
-    implementation "android.arch.lifecycle:extensions:1.1.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    def lifecycle_ver = '2.2.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_ver"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ver"
 
     //Dagger
-    def dagger_ver = 2.26
+    def dagger_ver = '2.26'
     api "com.google.dagger:dagger:$dagger_ver"
     api "com.google.dagger:dagger-android:$dagger_ver"
     api "com.google.dagger:dagger-android-support:$dagger_ver"
@@ -93,5 +100,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    kapt 'com.android.databinding:compiler:3.1.4'
 
 }

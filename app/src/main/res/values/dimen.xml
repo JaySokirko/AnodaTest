@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="x">4dp</dimen>
+    <dimen name="x2">8dp</dimen>
+    <dimen name="x4">16dp</dimen>
+    <dimen name="x6">24dp</dimen>
+
+    <dimen name="nav_view_height">56dp</dimen>
+    <dimen name="nav_view_image_height">24dp</dimen>
+    <dimen name="nav_view_image_width">48dp</dimen>
+    <dimen name="nav_view_instagram_text_size">32sp</dimen>
+
+    <dimen name="red_dot_height">5dp</dimen>
+    <dimen name="red_dot_width">5dp</dimen>
+
+</resources>

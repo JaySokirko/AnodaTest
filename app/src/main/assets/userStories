@@ -1,0 +1,39 @@
+[
+  {
+    "user_name": "some user name 1",
+    "user_image": "http image address to download 1",
+    "place": "some place 1",
+    "images": [
+      "http address 1",
+      "http address 2"
+    ],
+    "liked_by": [
+      "a",
+      "b"
+    ],
+    "tags": [
+      "teg 1",
+      "teg 2"
+    ],
+    "time_since_uploaded": "3 hours ago"
+  },
+  
+  {
+    "user_name": "some user name 11",
+    "user_image": "http image address to download 22",
+    "place": "some place 2",
+    "images": [
+      "http address 11",
+      "http address 22"
+    ],
+    "liked_by": [
+      "aa",
+      "bb"
+    ],
+    "tags": [
+      "teg 11",
+      "teg 22"
+    ],
+    "time_since_uploaded": "4 hours ago"
+  }
+]
