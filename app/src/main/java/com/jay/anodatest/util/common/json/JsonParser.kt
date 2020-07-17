@@ -1,10 +1,10 @@
-package com.jay.anodatest.util.common
+package com.jay.anodatest.util.common.json
 
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.jay.anodatest.BaseApplication
-import com.jay.anodatest.util.common.JsonFilesManager.getJsonDataFromAsset
+import com.jay.anodatest.util.common.json.JsonFilesManager.getJsonDataFromAsset
 
 class JsonParser<T> {
 

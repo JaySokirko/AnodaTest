@@ -9,9 +9,16 @@
     <dimen name="nav_view_height">56dp</dimen>
     <dimen name="nav_view_image_height">24dp</dimen>
     <dimen name="nav_view_image_width">48dp</dimen>
-    <dimen name="nav_view_instagram_text_size">32sp</dimen>
 
     <dimen name="dot_height">5dp</dimen>
     <dimen name="dot_width">5dp</dimen>
+    <dimen name="dot_margin_right">2dp</dimen>
+
+    <dimen name="user_story_text_margin">20dp</dimen>
+
+    <!--text size-->
+    <dimen name="nav_view_instagram_text_size">32sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="very_small_text">9sp</dimen>
 
 </resources>

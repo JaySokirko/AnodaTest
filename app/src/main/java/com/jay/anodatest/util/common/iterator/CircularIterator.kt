@@ -1,7 +1,5 @@
 package com.jay.anodatest.util.common.iterator
 
-import android.util.Log
-
 /**
  * This iterator allows forward and backward iteration of the elements in the collection.
  * @see CircularForwardIterator
@@ -15,13 +13,13 @@ class CircularIterator<T> : CircularBackwardIterator<T>, CircularForwardIterator
     private var wasNext = false
     private var wasPrevious = false
 
-    val TAG = "TAG"
-
     fun setCollection(collection: Collection<T>) {
         list.apply { clear(); list.addAll(collection) }
     }
 
     override fun isNotLatest(): Boolean = currentPosition < list.size
+
+    override fun isNotFirst(): Boolean = currentPosition >= 0
 
     override fun getNext(): T {
         if (isNotLatest()) {
@@ -36,17 +34,13 @@ class CircularIterator<T> : CircularBackwardIterator<T>, CircularForwardIterator
 
             if (currentPosition >= list.size) resetToStart()
 
-            Log.d(TAG, "getNext: ")
             return list[currentPosition++]
 
         } else {
             resetToStart()
-            Log.d(TAG, "getNext: else")
             return list[currentPosition++]
         }
     }
-
-    override fun isNotFirst(): Boolean = currentPosition >= 0
 
     override fun getPrevious(): T {
         if (isNotFirst()) {
@@ -61,12 +55,10 @@ class CircularIterator<T> : CircularBackwardIterator<T>, CircularForwardIterator
 
             if (currentPosition <= -1) resetToEnd()
 
-            Log.d(TAG, "getPrevious: ")
             return list[currentPosition--]
 
         } else {
             resetToEnd()
-            Log.d(TAG, "getPrevious: else")
             return list[currentPosition--]
         }
     }

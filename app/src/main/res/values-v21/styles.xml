@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ClickableImageView">
+        <item name="android:layout_width">@dimen/nav_view_image_width</item>
+        <item name="android:layout_height">@dimen/nav_view_image_height</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="NavViewRootViewStyle" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/nav_view_height</item>
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardBackgroundColor">@color/gray_50</item>
+        <item name="cardElevation">@dimen/x2</item>
+    </style>
+
+</resources>

@@ -4,7 +4,7 @@
     android:id="@+id/circle_image"
     android:layout_width="@dimen/dot_width"
     android:layout_height="@dimen/dot_height"
-    android:layout_margin="@dimen/x"
+    android:layout_margin="@dimen/dot_margin_right"
     android:src="@color/gray_400">
 
 </de.hdodenhof.circleimageview.CircleImageView>

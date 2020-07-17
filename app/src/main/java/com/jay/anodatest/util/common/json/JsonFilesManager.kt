@@ -1,4 +1,4 @@
-package com.jay.anodatest.util.common
+package com.jay.anodatest.util.common.json
 
 import android.content.Context
 import java.io.IOException
