@@ -40,7 +40,7 @@ class MainActivityTest {
             .check(matches(isDisplayed()))
     }
 
-    //Без Thread.sleep(1000) тест не проходит. Как я понял это из-за того, что предыдущий
+    //Без Thread.sleep(1000) тест не проходит. Как я понял, это из-за того, что предыдущий
     //Toast еще не исчез и закрывает Toast, который должен появиться при нажатии на camera_btn
     @Test
     fun onCameraBtnPressed() {
