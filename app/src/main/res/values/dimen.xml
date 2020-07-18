@@ -5,6 +5,7 @@
     <dimen name="x2">8dp</dimen>
     <dimen name="x4">16dp</dimen>
     <dimen name="x6">24dp</dimen>
+    <dimen name="x8">32dp</dimen>
 
     <dimen name="nav_view_height">56dp</dimen>
     <dimen name="nav_view_image_height">24dp</dimen>

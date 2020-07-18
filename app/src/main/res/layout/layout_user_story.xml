@@ -3,34 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/user_image"
         style="@style/ClickableImageView"
-        android:layout_height="32dp"
+        android:layout_height="@dimen/x8"
         android:layout_marginStart="@dimen/x2"
         android:layout_marginTop="@dimen/x2"
-        tools:src="@drawable/profile_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/profile_image" />
 
     <TextView
-        android:id="@+id/profile_name"
+        android:id="@+id/user_name"
         style="@style/BaseTextStyle"
         android:layout_marginStart="@dimen/x2"
-        tools:text="milena_thebrowbar"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toTopOf="@+id/user_image"
+        tools:text="milena_thebrowbar" />
 
     <TextView
         android:id="@+id/place"
         style="@style/BaseTextStyle"
         android:layout_marginStart="@dimen/x2"
-        tools:text="The Brow Bar Kharkov"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        tools:text="The Brow Bar Kharkov" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_arrow_right"
@@ -47,9 +47,9 @@
         style="@style/ClickableImageView"
         android:layout_marginEnd="@dimen/x2"
         android:src="@drawable/ic_dots"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintBottom_toBottomOf="@+id/user_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+        app:layout_constraintTop_toTopOf="@+id/user_image" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -145,17 +145,17 @@
 
     <TextView
         android:id="@+id/liked_by_list"
+        style="@style/BaseTextStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/BaseTextStyle"
         android:layout_marginStart="@dimen/x"
         android:layout_marginEnd="@dimen/user_story_text_margin"
-        tools:text="bla_bla_1, bla_bla_bla_bla_2 war_war_war_war_war_war_3"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/liked_ty_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/liked_ty_title"
-        app:layout_constraintTop_toTopOf="@+id/liked_ty_title" />
+        app:layout_constraintTop_toTopOf="@+id/liked_ty_title"
+        tools:text="bla_bla_1, bla_bla_bla_bla_2 war_war_war_war_war_war_3" />
 
     <TextView
         android:id="@+id/end_title"
@@ -167,46 +167,38 @@
     <TextView
         android:id="@+id/other_like_count"
         style="@style/BaseTextStyle"
-        tools:text="94 others"
-        android:textStyle="bold"
         android:layout_marginStart="@dimen/x"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/end_title"
         app:layout_constraintStart_toEndOf="@+id/end_title"
-        app:layout_constraintTop_toTopOf="@+id/end_title" />
+        app:layout_constraintTop_toTopOf="@+id/end_title"
+        tools:text="94 others" />
 
-    <TextView
-        android:id="@+id/comment_profile_name"
-        style="@style/BaseTextStyle"
-        android:layout_marginTop="@dimen/x2"
-        android:text="milena_thebrowbar"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/liked_ty_title"
-        app:layout_constraintTop_toBottomOf="@+id/end_title" />
+        <TextView
+            android:id="@+id/comment_content"
+            style="@style/BaseTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            android:layout_marginEnd="@dimen/user_story_text_margin"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/liked_ty_title"
+            app:layout_constraintTop_toBottomOf="@+id/end_title"
+            tools:text="milena_thebrowbar" />
 
-    <TextView
-        android:id="@+id/comment_content"
-        style="@style/BaseTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="@dimen/user_story_text_margin"
-        android:layout_marginStart="@dimen/x"
-        tools:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/posted_time_age"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/comment_profile_name"
-        app:layout_constraintTop_toTopOf="@+id/comment_profile_name" />
-
-    <TextView
-        android:id="@+id/posted_time_age"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/x"
-        tools:text="3 hours ago"
-        android:textSize="@dimen/very_small_text"
-        android:textAllCaps="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/comment_content"
-        app:layout_constraintStart_toStartOf="@+id/liked_ty_title" />
-
+        <TextView
+            android:id="@+id/posted_time_ago"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/user_story_text_margin"
+            android:layout_marginBottom="@dimen/x"
+            android:layout_marginTop="@dimen/x2"
+            android:textAllCaps="true"
+            android:textSize="@dimen/very_small_text"
+            app:layout_constraintTop_toBottomOf="@+id/comment_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/liked_ty_title"
+            tools:text="3 hours ago" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

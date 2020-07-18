@@ -2,7 +2,7 @@ package com.jay.anodatest.di.viewmodel
 
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
-import com.jay.anodatest.ui.viewmodel.StoriesViewModel
+import com.jay.anodatest.ui.viewmodel.UserStoriesViewModel
 import dagger.Module
 import dagger.Provides
 
@@ -10,7 +10,7 @@ import dagger.Provides
 class ViewModelModule {
 
     @Provides
-    fun provideUserStoriesModule(fragmentActivity: FragmentActivity): StoriesViewModel {
-        return ViewModelProviders.of(fragmentActivity).get(StoriesViewModel::class.java)
+    fun provideUserStoriesModule(fragmentActivity: FragmentActivity): UserStoriesViewModel {
+        return ViewModelProviders.of(fragmentActivity).get(UserStoriesViewModel::class.java)
     }
 }

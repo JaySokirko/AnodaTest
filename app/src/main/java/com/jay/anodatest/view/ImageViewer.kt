@@ -34,8 +34,8 @@ open class ImageViewer : FrameLayout {
         setOnSwipeListener()
     }
 
-    fun setImages(vararg images: Drawable) {
-        circularIterator.setCollection(images.toList())
+    fun setImages(images: MutableList<Drawable>) {
+        circularIterator.setCollection(images)
         rootLayout.setImageDrawable(circularIterator.getNext())
     }
 

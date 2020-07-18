@@ -1,5 +1,6 @@
 package com.jay.anodatest.util
 
+import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
@@ -34,13 +35,32 @@ fun String.startsWith(symbols: Array<out String>): Boolean {
     return false
 }
 
-fun String.splitTextByChar(char: String): Pair<Int, String> {
+fun String.removeLastChar(): String {
+    return if (this.isEmpty()) ""
+    else this.substring(0, this.length - 1)
+}
+
+fun String.makeBold(): SpannableStringBuilder {
+    val str = SpannableStringBuilder(this)
+    val start: Int = 0
+    val end: Int = this.length.minus(1)
+
+    str.setSpan(
+        android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+        start,
+        end,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+    return str
+}
+
+fun String.appendTextByChar(char: String): Pair<Int, String> {
     val array: List<String> = this.trim().split(" ")
     val builder = StringBuilder()
-    var splitPositions = 0
+    val splitPositions: Int = array.size
 
     array.forEachIndexed { index, string ->
-        val lastIterate: Boolean = index == array.size -1
+        val lastIterate: Boolean = index == array.size - 1
 
         builder.append(string)
 
@@ -48,14 +68,7 @@ fun String.splitTextByChar(char: String): Pair<Int, String> {
 
         builder.append(char)
         builder.append(" ")
-
-        splitPositions++
     }
 
     return Pair(splitPositions, builder.toString())
-}
-
-fun String.removeLastChar(): String {
-    return if (this.isEmpty()) ""
-    else this.substring(0, this.length - 1)
 }
