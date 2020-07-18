@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import com.jay.anodatest.R
 import com.jay.anodatest.util.common.iterator.CircularIterator
-import com.jay.anodatest.util.ui.SwipeTouchListener
+import com.jay.anodatest.util.ui.gestures.SwipeTouchListener
 import rx.subjects.PublishSubject
 
 open class ImageViewer : FrameLayout {
@@ -34,8 +34,8 @@ open class ImageViewer : FrameLayout {
         setOnSwipeListener()
     }
 
-    fun setImages(vararg images: Drawable) {
-        circularIterator.setCollection(images.toList())
+    fun setImages(images: MutableList<Drawable>) {
+        circularIterator.setCollection(images)
         rootLayout.setImageDrawable(circularIterator.getNext())
     }
 

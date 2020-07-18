@@ -10,7 +10,7 @@
 
         <ImageView
             android:id="@+id/make_photo"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:layout_marginStart="@dimen/x2"
             android:src="@drawable/ic_camera"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +33,7 @@
 
         <ImageView
             android:id="@+id/send"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:layout_marginEnd="@dimen/x2"
             android:src="@drawable/ic_send"
             app:layout_constraintBottom_toBottomOf="parent"

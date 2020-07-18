@@ -1,4 +1,4 @@
-package com.jay.anodatest.util.ui
+package com.jay.anodatest.util.ui.gestures
 
 import android.content.Context
 import android.view.GestureDetector

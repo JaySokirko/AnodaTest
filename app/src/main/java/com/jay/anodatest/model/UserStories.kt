@@ -12,7 +12,7 @@ class UserStories {
 
     @SerializedName("user_image")
     @Expose
-    var userImage: String? = null
+    var profileImage: String? = null
 
     @SerializedName("place")
     @Expose
@@ -20,15 +20,15 @@ class UserStories {
 
     @SerializedName("images")
     @Expose
-    var storyImages: List<String?>? = null
+    var storyImagesUrl: List<String?>? = null
 
     @SerializedName("liked_by")
     @Expose
     var likedBy: List<String?>? = null
 
-    @SerializedName("tags")
+    @SerializedName("comment")
     @Expose
-    var tags: List<String?>? = null
+    var tags: String? = null
 
     @SerializedName("time_since_uploaded")
     @Expose

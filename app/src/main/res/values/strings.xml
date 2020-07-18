@@ -1,6 +1,10 @@
 <resources>
 
     <string name="app_name">AnodaTest</string>
+
     <string name="instagram">Instagram</string>
+
+    <string name="liked_by">Liked by</string>
+    <string name="and">and</string>
 
 </resources>

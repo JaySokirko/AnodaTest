@@ -9,7 +9,7 @@
 
         <ImageView
             android:id="@+id/home"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:layout_marginStart="@dimen/x6"
             android:src="@drawable/ic_home_selected"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
 
         <ImageView
             android:id="@+id/search"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:src="@drawable/ic_search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/add"
@@ -31,7 +31,7 @@
 
         <ImageView
             android:id="@+id/add"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:src="@drawable/ic_plus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/like"
@@ -41,7 +41,7 @@
 
         <ImageView
             android:id="@+id/like"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:src="@drawable/ic_heart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/profile"
@@ -51,7 +51,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile"
-            style="@style/NavViewImageStyle"
+            style="@style/ClickableImageView"
             android:layout_marginEnd="@dimen/x6"
             android:src="@drawable/profile_image"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -63,8 +63,8 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/dot_width"
             android:layout_height="@dimen/dot_height"
-            android:src="@drawable/ic_circle_red"
             android:layout_marginTop="@dimen/x"
+            android:src="@color/red_700"
             app:layout_constraintEnd_toEndOf="@+id/profile"
             app:layout_constraintStart_toStartOf="@+id/profile"
             app:layout_constraintTop_toBottomOf="@+id/profile" />
