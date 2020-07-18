@@ -54,10 +54,9 @@ fun String.makeBold(): SpannableStringBuilder {
     return str
 }
 
-fun String.appendTextByChar(char: String): Pair<Int, String> {
+fun String.appendTextByChar(char: String):  String {
     val array: List<String> = this.trim().split(" ")
     val builder = StringBuilder()
-    val splitPositions: Int = array.size
 
     array.forEachIndexed { index, string ->
         val lastIterate: Boolean = index == array.size - 1
@@ -70,5 +69,5 @@ fun String.appendTextByChar(char: String): Pair<Int, String> {
         builder.append(" ")
     }
 
-    return Pair(splitPositions, builder.toString())
+    return builder.toString()
 }

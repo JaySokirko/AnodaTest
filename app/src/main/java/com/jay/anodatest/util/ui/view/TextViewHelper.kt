@@ -45,7 +45,7 @@ class TextViewHelper {
         return async.await()
     }
 
-    fun cleanResources() {
+    fun clear() {
         coroutineScope.cancel()
     }
 }

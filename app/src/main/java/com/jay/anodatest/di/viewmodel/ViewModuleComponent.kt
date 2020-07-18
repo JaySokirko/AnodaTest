@@ -1,6 +1,7 @@
 package com.jay.anodatest.di.viewmodel
 
 import androidx.fragment.app.FragmentActivity
+import com.jay.anodatest.ui.activity.MainActivity
 import com.jay.anodatest.ui.fragment.HomeFragment
 import dagger.BindsInstance
 import dagger.Component
@@ -16,4 +17,5 @@ interface ViewModuleComponent {
     }
 
     fun inject(homeFragment: HomeFragment)
+    fun inject(mainActivity: MainActivity)
 }

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="mainActivityVM"
+            type="com.jay.anodatest.ui.activity.MainActivity" />
+
+        <variable
+            name="bottomNavVM"
+            type="com.jay.anodatest.ui.viewmodel.BottomNavigationViewModel" />
+
+        <variable
+            name="topNavVm"
+            type="com.jay.anodatest.ui.viewmodel.TopNavigationViewModel" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,13 +34,16 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/layout_top_nav" />
+        layout="@layout/layout_top_nav"
+        app:topNavVm="@{topNavVm}"/>
 
     <include
         android:id="@+id/include2"
         layout="@layout/layout_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="@dimen/nav_view_height"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:bottomNavVM="@{bottomNavVM}"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

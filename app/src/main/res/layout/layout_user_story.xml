@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="userStoryVM"
+            type="com.jay.anodatest.ui.viewmodel.UserStoriesViewModel" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -43,7 +51,7 @@
         app:layout_constraintTop_toTopOf="@+id/place" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/more"
+        android:id="@+id/more_btn"
         style="@style/ClickableImageView"
         android:layout_marginEnd="@dimen/x2"
         android:src="@drawable/ic_dots"
@@ -74,13 +82,13 @@
         android:layout_marginEnd="@dimen/x"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/send"
+        app:layout_constraintBottom_toBottomOf="@+id/send_btn"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/barrier3"
-        app:layout_constraintTop_toTopOf="@+id/send" />
+        app:layout_constraintTop_toTopOf="@+id/send_btn" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/like"
+        android:id="@+id/like_btn"
         style="@style/ClickableImageView"
         android:layout_marginStart="@dimen/x2"
         android:layout_marginTop="@dimen/x2"
@@ -89,23 +97,23 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/comment"
+        android:id="@+id/comment_btn"
         style="@style/ClickableImageView"
         android:layout_marginTop="@dimen/x2"
         android:src="@drawable/ic_dialogue"
-        app:layout_constraintStart_toEndOf="@+id/like"
+        app:layout_constraintStart_toEndOf="@+id/like_btn"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/send"
+        android:id="@+id/send_btn"
         style="@style/ClickableImageView"
         android:layout_marginTop="@dimen/x2"
         android:src="@drawable/ic_send"
-        app:layout_constraintStart_toEndOf="@+id/comment"
+        app:layout_constraintStart_toEndOf="@+id/comment_btn"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/save"
+        android:id="@+id/save_btn"
         style="@style/ClickableImageView"
         android:layout_marginTop="@dimen/x2"
         android:layout_marginEnd="@dimen/x2"
@@ -132,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
-        app:constraint_referenced_ids="guideline2,send,like,comment" />
+        app:constraint_referenced_ids="guideline2,send_btn,like_btn,comment_btn" />
 
     <TextView
         android:id="@+id/liked_ty_title"
@@ -141,7 +149,7 @@
         android:layout_marginTop="@dimen/x2"
         android:text="@string/liked_by"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/like" />
+        app:layout_constraintTop_toBottomOf="@+id/like_btn" />
 
     <TextView
         android:id="@+id/liked_by_list"
@@ -202,3 +210,4 @@
             tools:text="3 hours ago" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

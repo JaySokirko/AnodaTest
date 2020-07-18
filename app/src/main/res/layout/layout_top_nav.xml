@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="topNavVm"
+            type="com.jay.anodatest.ui.viewmodel.TopNavigationViewModel" />
+    </data>
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/NavViewRootViewStyle"
@@ -8,11 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/make_photo"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/camera_btn"
             style="@style/ClickableImageView"
             android:layout_marginStart="@dimen/x2"
             android:src="@drawable/ic_camera"
+            android:onClick="@{() -> topNavVm.onOpenCamera()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,15 +36,16 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/nav_view_instagram_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/send"
-            app:layout_constraintStart_toEndOf="@+id/make_photo"
+            app:layout_constraintEnd_toStartOf="@+id/send_btn"
+            app:layout_constraintStart_toEndOf="@+id/camera_btn"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/send"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/send_btn"
             style="@style/ClickableImageView"
             android:layout_marginEnd="@dimen/x2"
             android:src="@drawable/ic_send"
+            android:onClick="@{() -> topNavVm.onSend()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,3 +53,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
+</layout>
